@@ -24,5 +24,9 @@ public class UnaryOperators {
 		c = a++; //Post-Increment - Use first then increment it
 		System.out.println("c: " + c);
 		System.out.println("a: " + a);
+		
+		boolean isStatus = false;
+		isStatus = !isStatus;
+		System.out.println(isStatus);
 	}
 }
