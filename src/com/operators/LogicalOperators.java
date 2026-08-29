@@ -11,8 +11,8 @@ public class LogicalOperators {
 
         //Logical OR - || - at least one of the conditions needs to be true to get the output as true
         // '|' - This is Bitwise OR
-        //(Condition1) && (Condition2) - if either of the one condition is true then output will be true otherwise false
-        //(5>10) && (5>3) - output will be true since (5>3) is true
+        //(Condition1) || (Condition2) - if either of the one condition is true then output will be true otherwise false
+        //(5>10) || (5>3) - output will be true since (5>3) is true
         System.out.println((5>4) || (5<2)); //true
 
         //Logical NOT - ! (Inversion)
