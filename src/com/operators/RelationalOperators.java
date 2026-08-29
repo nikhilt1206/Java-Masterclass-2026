@@ -2,7 +2,7 @@ package com.operators;
 
 public class RelationalOperators {
     public static void main(String[] args){
-        //Relational Operators - Used for Comparison - used majoring on Primitive Datatypes and Numbers
+        //Relational Operators - Used for Comparison - used majorly on Primitive Datatypes and Numbers
         //>, <, >=, <=, ==, !=
         int number1 = 5; // '=' is Assignment operator - used to assign value to a variable
         int number2 = 10;

@@ -19,6 +19,5 @@ public class LogicalOperators {
         //Converts true to false and false to true
         //!(15<5) will give true as (15<5) is false and putting !(false) converts it to true
         System.out.println(! ((5>4) || (5<2))); //false
-
     }
 }
