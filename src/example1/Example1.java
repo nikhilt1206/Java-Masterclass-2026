@@ -1,6 +1,6 @@
 package example1;
 
-//name of class should always matches with file name (same for enums, interfaces)
+//name of class should always match with file name (same for enums, interfaces)
 public class Example1 {
 
 	//Main method is required to run the program (starting point of a program)
