@@ -8,7 +8,7 @@ public class TernaryOperator {
 
         int a = 100;
         int b = 120;
-        int max = (a>b) ? a : b; //max = a - since b is greater than a so 120 gets assigned to max variable
+        int max = (a>b) ? a : b; //max = b - since b is greater than a so 120 gets assigned to max variable
         System.out.println(max);
 
         //Number is even or odd
