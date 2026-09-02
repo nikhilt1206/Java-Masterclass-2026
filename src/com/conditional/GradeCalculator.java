@@ -4,7 +4,7 @@ public class GradeCalculator {
     public static void main(String[] args){
         int percentage = 80;
         char grade;
-        if(percentage>90){
+        if((percentage<100) && (percentage>90)){
             grade='A';
         }
         else if((percentage>=80) && (percentage<=90)){
@@ -16,8 +16,12 @@ public class GradeCalculator {
         else if((percentage>=60) && (percentage<70)){
             grade='D';
         }
-        else{
+        else if(percentage<60){
             grade='F';
+        }
+        else{
+            grade=' ';
+            System.out.println("Something went wrong!! Invalid percentage!!");
         }
         System.out.println(grade);
     }
