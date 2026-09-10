@@ -38,8 +38,5 @@ public class Demo {
         for(int index=0;index<marks.length;index++){ //index<marks.length or index<=marks.length-1 - both are same
             System.out.println(marks[index]);
         }
-
-
-
     }
 }

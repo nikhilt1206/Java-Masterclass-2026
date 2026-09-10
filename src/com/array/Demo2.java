@@ -7,7 +7,7 @@ public class Demo2 {
         //marks[1]=7;
         //marks[2]=6;
 
-        //Another way creating and initializing an array
+        //Another way of creating and initializing an array
         int marks[] = {8,7,6};
         for(int index=0;index<marks.length;index++){
             System.out.println(marks[index]);
@@ -18,7 +18,5 @@ public class Demo2 {
         for(int temp : marks){
             System.out.println(temp);
         }
-
-
     }
 }
