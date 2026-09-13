@@ -1,13 +1,11 @@
 package com.string;
 
-import java.util.Locale;
-
 public class StringMethodPart1 {
     public static void main(String[] args){
         //String Methods
         String data = "Apple";
         String data2 = "apple";
-        //equals and equalsIgnoreCase - does value check
+        //equals() and equalsIgnoreCase() - does value check
         System.out.println(data.hashCode());
         System.out.println(data2.hashCode());
         System.out.println(data==data2); //reference (hashcode) check - false
