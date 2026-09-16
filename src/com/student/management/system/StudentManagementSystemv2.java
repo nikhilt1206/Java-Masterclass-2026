@@ -69,5 +69,8 @@ public class StudentManagementSystemv2 {
 
         //We cannot read single character with Scanner class
         //We have to read it in String format and then convert string to char! - str.charAt(0)
+        //This code still store the details for only one student
+        //For 1000 students do we need to create/decalre 1000 variables again and again? - not practical
+        //Need a data structure to store details of n number of students - "Arrays"
     }
 }
