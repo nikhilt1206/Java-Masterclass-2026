@@ -30,7 +30,33 @@ public class StudentManagementSystemv2 {
         marksObtainedInScience = scanner.nextDouble();
         System.out.println("Marks obtained in Maths");
         marksObtainedInMaths = scanner.nextDouble();
-
+        //Grade calculation
+        double totalMarksObtained = marksObtainedInEnglish + marksObtainedInScience + marksObtainedInMaths;
+        double percentageObtained = totalMarksObtained / 3.0;
+        if(percentageObtained>=95){
+            studentGrade="A+";
+        }
+        else if(percentageObtained>=90){
+            studentGrade="A";
+        }
+        else if(percentageObtained>=85){
+            studentGrade="B+";
+        }
+        else if(percentageObtained>=80){
+            studentGrade="B";
+        }
+        else if(percentageObtained>=75){
+            studentGrade="C+";
+        }
+        else if(percentageObtained>=70){
+            studentGrade="C";
+        }
+        else if(percentageObtained>=65){
+            studentGrade="D";
+        }
+        else{
+            studentGrade="F";
+        }
 
         System.out.println("Student Name : " + studentName);
         System.out.println("Student Age : " + studentAge);
@@ -40,5 +66,8 @@ public class StudentManagementSystemv2 {
         System.out.println("Science : " + marksObtainedInScience);
         System.out.println("Maths : " + marksObtainedInMaths);
         System.out.println("Student Grade : " + studentGrade);
+
+        //We cannot read single character with Scanner class
+        //We have to read it in String format and then convert string to char! - str.charAt(0)
     }
 }
