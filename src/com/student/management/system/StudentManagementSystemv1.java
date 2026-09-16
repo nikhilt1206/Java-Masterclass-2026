@@ -1,6 +1,6 @@
 package com.student.management.system;
 
-public class StudentManagementSystem {
+public class StudentManagementSystemv1 {
     public static void main(String[] args){
 
         //Store the information of Student
@@ -21,5 +21,9 @@ public class StudentManagementSystem {
         System.out.println("Science : "+marksObtainedInScience);
         System.out.println("Maths : "+marksObtainedInMaths);
         System.out.println("Student Grade : "+studentGrade);
+
+        //Drawbacks of v1 :
+        //1. Lots of Hardcoding
+        //2. Store the details of only 1 student (not preferred in real time applications)
     }
 }
