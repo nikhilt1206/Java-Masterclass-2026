@@ -11,8 +11,8 @@ public class StudentManagementSystemv2 {
         double marksObtainedInMaths = 75;
         String studentGrade = "A";
         int studentRollNumber = 22;
-        System.out.println("Student Management System");
 
+        System.out.println("Student Management System");
         //Read values from the console
         Scanner scanner = new Scanner(System.in);
         //Scanner - class (To read values from the console), scanner - reference variable
