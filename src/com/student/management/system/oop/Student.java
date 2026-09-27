@@ -20,10 +20,17 @@ public class Student {
 
     //getName() - to retrieve the value if the instance variable - name
     public String getName() {
+        //here since we don't have any local variable called 'name' so it will be automatically considered as instance var
+        //this.name also work but no need in this scenario
         return name;
     }
     //setName() - to initialize the value of IV - name - by passing the parameter as an input by the user
     public void setName(String name) {
+        //inside the method the importance is given to the local variable
+        //name; //this name refers to the parameter passed 'name' - local variable
+        //we want to access the instance variable in a method which has similar name for local variable
+        //To differentiate instance variable and local variable when they both have same name, we use - 'this' keyword
+        //this.name - will refer to the instance variable and name - will refer to the local variable
         this.name = name; //initialize the instance var with value we are passing as a parameter
     }
 
@@ -50,7 +57,7 @@ public class Student {
             this.rollNumber = rollNumber;
         }
         else{
-            System.out.println("Invalid Roll Number!!");
+            System.out.println("Invalid Roll Number!!"); //in case user enters wrong/invalid value
         }
     }
 
