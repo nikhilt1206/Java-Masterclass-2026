@@ -2,7 +2,7 @@ package com.student.management.system.oop;
 
 public class Runner1 {
     public static void main(String[] args){
-        Student s1 = new Student();
+        //Student s1 = new Student();
         //s1 - reference variable
         //Assign values to instance variables
 //        s1.name="Nikhil";
@@ -13,7 +13,7 @@ public class Runner1 {
 //        s1.marksObtainedInMaths=40;
 //        s1.grade="C";
 
-        System.out.println(s1); // will print hashcode : com.student.management.system.oop.Student@5f184fc6
+        //System.out.println(s1); // will print hashcode : com.student.management.system.oop.Student@5f184fc6
         //s1 will take us to the object and once we do s1. - will get all the instance var will get highlighted
 //        System.out.println(s1.name); //default value - null
 //        System.out.println(s1.age);
@@ -23,7 +23,7 @@ public class Runner1 {
 //        System.out.println(s1.marksObtainedInMaths);
 //        System.out.println(s1.grade);
 
-        s1.calculateTotalMarks();
+        //s1.calculateTotalMarks();
 
         //Drawbacks : Still we can assign "1234" in name, 170 as age which is not practical
         //Same for all instance variables - user can enter anything and it can get accepted by the system

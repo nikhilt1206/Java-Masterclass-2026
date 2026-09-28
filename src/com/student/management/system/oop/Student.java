@@ -18,6 +18,20 @@ public class Student {
     //name (IV) is bounded to 2 methods - getName() and setName()
     //set - to initialize and get - to retrieve
 
+    //Constructor is a special entity (method) inside a class which has same name as class
+    //Job of a constructor is to initialize instance variables - during object creation if we want to initialize instance variables - we need constructor (executed in stack memory)
+    //Constructor does not have return type as getters/setters
+    //Constructor which have parameters - Parametrized Constructor - we have to call it - pass the parameters while calling it
+    public Student(String name, int age, int rollNumber, double marksObtainedInEnglish, double marksObtainedInScience, double marksObtainedInMaths, String grade) {
+        this.name = name;
+        this.age = age;
+        this.rollNumber = rollNumber;
+        this.marksObtainedInEnglish = marksObtainedInEnglish;
+        this.marksObtainedInScience = marksObtainedInScience;
+        this.marksObtainedInMaths = marksObtainedInMaths;
+        this.grade = grade;
+    }
+
     //getName() - to retrieve the value if the instance variable - name
     public String getName() {
         //here since we don't have any local variable called 'name' so it will be automatically considered as instance var
