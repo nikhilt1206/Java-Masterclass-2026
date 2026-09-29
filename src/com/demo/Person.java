@@ -35,8 +35,6 @@ public class Person {
     //Same method name but different parameters - Constructor Overloading
     //Differentiated using parameters which are present in the method
 
-
-
     public String getName() {
         return name;
     }
