@@ -6,7 +6,11 @@ public class Runner {
         Person p1 = new Person("Nikhil",20);
         //we don't have any constructor in our Person class - so java will create one constructor (dummy)
         //Default constructor will be called if no other constructor is present
-        p1.setId(41);
-        p1.setName("Rola");
+        //p1.setId(41);
+        //p1.setName("Rola");
+
+        Person copyPerson = new Person(p1); //values of p1 will be given to newPerson
+        System.out.println(copyPerson.getName());
+        System.out.println(copyPerson.getId());
     }
 }

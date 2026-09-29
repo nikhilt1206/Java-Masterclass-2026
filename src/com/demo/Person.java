@@ -16,6 +16,16 @@ public class Person {
         this.name = name;
         this.id = id;
     }
+
+    //Copy Constructor - Used to create a copy of an Object
+    //Whatever will be the value of those instance variables, they will be used as a reference to initialize the newly created object
+    public Person(Person other){
+        //it will take the value of another object of same class
+        System.out.println("Copy Constructor");
+        this.name = other.name;
+        this.id = other.id;
+    }
+
     //Same method name but different parameters - Constructor Overloading
     //Differentiated using parameters which are present in the method
 
