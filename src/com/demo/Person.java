@@ -11,10 +11,16 @@ public class Person {
     }
 
     //Parameterized Constructor - has parameters
+    //Constructor Chaining : When one constructor calls another constructor
+    //In java, it can be done with 'this'(with in the class) and 'super'(inheritance) keyword
+    //Calling default constructor from Parameterized Constructor
     public Person(String name, int id) { //here we have 2 parameters
+        this(); //it will call the default constructor of Person class - it should be the first line always if we want to call another constructor
+        //Only a constructor can call another constructor (it cannot be called using setters)
         System.out.println("Parametrized Constructor for Person class");
         this.name = name;
         this.id = id;
+        //this(); - error (not the first statement in the constructor)
     }
 
     //Copy Constructor - Used to create a copy of an Object
