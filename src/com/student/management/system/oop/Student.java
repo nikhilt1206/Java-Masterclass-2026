@@ -1,5 +1,7 @@
 package com.student.management.system.oop;
 
+import java.util.Objects;
+
 public class Student {
     //all the instance variables should be marked as private - they cannot be accessed outside the class
     private String name;
@@ -126,5 +128,42 @@ public class Student {
     public void calculateTotalMarks(){
         double totalMarks = marksObtainedInEnglish + marksObtainedInScience + marksObtainedInMaths;
         System.out.println("Total Marks Obtained: "+totalMarks);
+    }
+
+    //toString() method comes from Object class - return String - creates one line description of the object's Instance Variable
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", rollNumber=" + rollNumber +
+                ", marksObtainedInEnglish=" + marksObtainedInEnglish +
+                ", marksObtainedInScience=" + marksObtainedInScience +
+                ", marksObtainedInMaths=" + marksObtainedInMaths +
+                ", grade='" + grade + '\'' +
+                '}';
+    }
+
+    //equals() method - helps to compare 2 java objects and in automation framework - for assertions
+    //Two objects set to be equal when they :
+    //1. Belong to same class type
+    //2. Values of instance variables need to be same
+    //3. 2 Objects are going to have same hashcode value (numeric representation of memory)
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        //getClass() method will give the class type
+        Student student = (Student) o;
+                return age == student.age &&
+                rollNumber == student.rollNumber &&
+                Double.compare(marksObtainedInEnglish, student.marksObtainedInEnglish) == 0 &&
+                Double.compare(marksObtainedInScience, student.marksObtainedInScience) == 0 &&
+                Double.compare(marksObtainedInMaths, student.marksObtainedInMaths) == 0 &&
+                Objects.equals(name, student.name) && Objects.equals(grade, student.grade);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, rollNumber, marksObtainedInEnglish, marksObtainedInScience, marksObtainedInMaths, grade);
     }
 }
