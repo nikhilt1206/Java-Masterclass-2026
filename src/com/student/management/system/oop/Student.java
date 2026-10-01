@@ -10,6 +10,8 @@ public class Student {
     private double marksObtainedInEnglish;
     private double marksObtainedInScience;
     private double marksObtainedInMaths;
+    private double totalMarks;
+    private double percentage;
     private String grade;
     //Variable created inside the methods - local var - Stack - never initialized with default values implicitly.
     //Variables created inside the class and are non-static - Instance Variable - created in Heap memory - initialized with default value
@@ -24,14 +26,16 @@ public class Student {
     //Job of a constructor is to initialize instance variables - during object creation if we want to initialize instance variables - we need constructor (executed in stack memory)
     //Constructor does not have return type as getters/setters
     //Constructor which have parameters - Parametrized Constructor - we have to call it - pass the parameters while calling it
-    public Student(String name, int age, int rollNumber, double marksObtainedInEnglish, double marksObtainedInScience, double marksObtainedInMaths, String grade) {
-        this.name = name;
-        this.age = age;
-        this.rollNumber = rollNumber;
-        this.marksObtainedInEnglish = marksObtainedInEnglish;
-        this.marksObtainedInScience = marksObtainedInScience;
-        this.marksObtainedInMaths = marksObtainedInMaths;
-        this.grade = grade;
+    public Student(String name, int age, int rollNumber, double marksObtainedInEnglish, double marksObtainedInScience, double marksObtainedInMaths) {
+        if(validateAge(age) && validateRollNumber(rollNumber) && validateMarks(marksObtainedInEnglish) &&
+        validateMarks(marksObtainedInScience) && validateMarks(marksObtainedInMaths)){
+            this.name = name;
+            this.age = age;
+            this.rollNumber = rollNumber;
+            this.marksObtainedInEnglish = marksObtainedInEnglish;
+            this.marksObtainedInScience = marksObtainedInScience;
+            this.marksObtainedInMaths = marksObtainedInMaths;
+        }
     }
 
     //getName() - to retrieve the value if the instance variable - name
@@ -60,7 +64,17 @@ public class Student {
             this.age = age;
         }
         else{
-            System.out.println("Invalid age for student!!");
+            System.err.println("Invalid age for student!!");
+        }
+    }
+
+    public boolean validateAge(int age){
+        if(age<21 && age>=10){
+            return true;
+        }
+        else{
+            System.err.println("Invalid age for student!!");
+            return false;
         }
     }
 
@@ -73,7 +87,27 @@ public class Student {
             this.rollNumber = rollNumber;
         }
         else{
-            System.out.println("Invalid Roll Number!!"); //in case user enters wrong/invalid value
+            System.err.println("Invalid Roll Number!!"); //in case user enters wrong/invalid value
+        }
+    }
+
+    public boolean validateRollNumber(int rollNumber){
+        if(rollNumber>=1 && rollNumber<=100){
+            return true;
+        }
+        else{
+            System.err.println("Invalid roll number for student!!");
+            return false;
+        }
+    }
+
+    public boolean validateMarks(double marksForTheSubject){
+        if(marksForTheSubject>=100 || marksForTheSubject<0){
+            System.err.println("Invalid marks for student!!");
+            return false;
+        }
+        else{
+            return true;
         }
     }
 
@@ -120,17 +154,54 @@ public class Student {
         return grade;
     }
 
-    public void setGrade(String grade) {
-        this.grade = grade;
-    }
 
     //non-static method - functionality - task student object will do
     public void calculateTotalMarks(){
-        double totalMarks = marksObtainedInEnglish + marksObtainedInScience + marksObtainedInMaths;
-        System.out.println("Total Marks Obtained: "+totalMarks);
+        totalMarks = marksObtainedInEnglish + marksObtainedInScience + marksObtainedInMaths;
+    }
+
+    public void calculatePercentage(){
+        percentage = totalMarks/3;
+    }
+
+    public void calculateGrade(){
+        if(percentage==0){
+            grade="Cannot be calculated!!";
+        }
+        else {
+            if (percentage >= 95) {
+                grade = "A+";
+            } else if (percentage >= 90) {
+                grade = "A";
+            } else if (percentage >= 85) {
+                grade = "B+";
+            } else if (percentage >= 80) {
+                grade = "B";
+            } else if (percentage >= 75) {
+                grade = "C+";
+            } else if (percentage >= 70) {
+                grade = "C";
+            } else if (percentage >= 65) {
+                grade = "D+";
+            } else if (percentage >= 60) {
+                grade = "D";
+            } else {
+                grade = "F";
+            }
+        }
+    }
+
+    public double getTotalMarks() {
+        return totalMarks;
+    }
+
+    public double getPercentage() {
+        return percentage;
     }
 
     //toString() method comes from Object class - return String - creates one line description of the object's Instance Variable
+
+
     @Override
     public String toString() {
         return "Student{" +
@@ -140,6 +211,8 @@ public class Student {
                 ", marksObtainedInEnglish=" + marksObtainedInEnglish +
                 ", marksObtainedInScience=" + marksObtainedInScience +
                 ", marksObtainedInMaths=" + marksObtainedInMaths +
+                ", totalMarks=" + totalMarks +
+                ", percentage=" + percentage +
                 ", grade='" + grade + '\'' +
                 '}';
     }
@@ -152,18 +225,12 @@ public class Student {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        //getClass() method will give the class type
         Student student = (Student) o;
-                return age == student.age &&
-                rollNumber == student.rollNumber &&
-                Double.compare(marksObtainedInEnglish, student.marksObtainedInEnglish) == 0 &&
-                Double.compare(marksObtainedInScience, student.marksObtainedInScience) == 0 &&
-                Double.compare(marksObtainedInMaths, student.marksObtainedInMaths) == 0 &&
-                Objects.equals(name, student.name) && Objects.equals(grade, student.grade);
+        return age == student.age && rollNumber == student.rollNumber && Double.compare(marksObtainedInEnglish, student.marksObtainedInEnglish) == 0 && Double.compare(marksObtainedInScience, student.marksObtainedInScience) == 0 && Double.compare(marksObtainedInMaths, student.marksObtainedInMaths) == 0 && Double.compare(totalMarks, student.totalMarks) == 0 && Double.compare(percentage, student.percentage) == 0 && Objects.equals(name, student.name) && Objects.equals(grade, student.grade);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age, rollNumber, marksObtainedInEnglish, marksObtainedInScience, marksObtainedInMaths, grade);
+        return Objects.hash(name, age, rollNumber, marksObtainedInEnglish, marksObtainedInScience, marksObtainedInMaths, totalMarks, percentage, grade);
     }
 }

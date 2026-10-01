@@ -4,7 +4,7 @@ public class Runner4 {
     public static void main(String[] args){
 
         //Object creation happen for once - constructor will be called once
-        Student s1 = new Student("Uday",12,22,80,70,89,"B");
+        Student s1 = new Student("Uday",12,22,80,70,89);
         //if we hide new - Student() - looks like a method call
         //Constructor is a special entity (method) inside a class which has same name as class
         //Job of constructor is to do assignment where as job of setter is to do updation
