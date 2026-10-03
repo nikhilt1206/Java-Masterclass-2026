@@ -13,6 +13,8 @@ public class Student {
     private double totalMarks;
     private double percentage;
     private String grade;
+    private int contactNumber;
+    private String address;
     //Variable created inside the methods - local var - Stack - never initialized with default values implicitly.
     //Variables created inside the class and are non-static - Instance Variable - created in Heap memory - initialized with default value
     //Instance Variables - Properties of a Class (data properties)
