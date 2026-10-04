@@ -243,7 +243,7 @@ public class StudentR2 {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         StudentR2 studentR2 = (StudentR2) o;
-        return age == studentR2.age && rollNumber == studentR2.rollNumber && Double.compare(marksObtainedInEnglish, studentR2.marksObtainedInEnglish) == 0 && Double.compare(marksObtainedInScience, studentR2.marksObtainedInScience) == 0 && Double.compare(marksObtainedInMaths, studentR2.marksObtainedInMaths) == 0 && Double.compare(totalMarks, studentR2.totalMarks) == 0 && Double.compare(percentage, studentR2.percentage) == 0 && contactNumber == studentR2.contactNumber && Objects.equals(name, studentR2.name) && Objects.equals(grade, studentR2.grade) && Objects.equals(address, studentR2.address);
+        return age == studentR2.age && rollNumber == studentR2.rollNumber && Double.compare(marksObtainedInEnglish, studentR2.marksObtainedInEnglish) == 0 && Double.compare(marksObtainedInScience, studentR2.marksObtainedInScience) == 0 && Double.compare(marksObtainedInMaths, studentR2.marksObtainedInMaths) == 0 && Double.compare(totalMarks, studentR2.totalMarks) == 0 && Double.compare(percentage, studentR2.percentage) == 0 && Objects.equals(name, studentR2.name) && Objects.equals(grade, studentR2.grade) && Objects.equals(contactNumber, studentR2.contactNumber) && Objects.equals(address, studentR2.address);
     }
 
     @Override

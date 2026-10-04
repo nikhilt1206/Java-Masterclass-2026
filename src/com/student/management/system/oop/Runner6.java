@@ -4,7 +4,7 @@ public class Runner6 {
     public static void main(String[] args){
 
         //Calculating percentage, total marks and grade
-        Student s2 = new Student("Nikhil",24,1,50,45,65);
+        StudentR2 s2 = new StudentR2("Nikhil",19,1,50,45,65,"9343765332","Bengaluru");
         s2.calculateTotalMarks();
         s2.calculatePercentage();
         s2.calculateGrade();
