@@ -3,7 +3,7 @@ package com.student.management.system.oop;
 public class Runner5 {
     public static void main(String[] args){
 
-        Student s1 = new Student("Uday",12,22,80,70,89);
+        Studentv1 s1 = new Studentv1("Uday",12,22,80,70,89);
 
         s1.setName("Uday P");
         s1.setRollNumber(33);
@@ -21,13 +21,13 @@ public class Runner5 {
         //We can use toString() method to print - one line description of the object's Instance variables
         System.out.println(s1);
 
-        Student s2 = new Student("Nikhil",19,1,50,45,65);
-        System.out.println(s2);
+//        Studentv1 s2 = new Studentv1("Nikhil",19,1,50,45,65);
+//        System.out.println(s2);
 
-        System.out.println(s1.equals(s2)); //since s1 and s1 are different objects so output will be false
-
-        Student s3 = new Student("Nikhil",19,1,50,45,65);
-        //both s2 and s3 are of same class type, having same values for instance variables and same hashcode
-        System.out.println(s2.equals(s3)); //true
+//        System.out.println(s1.equals(s2)); //since s1 and s1 are different objects so output will be false
+//
+//        Studentv1 s3 = new Studentv1("Nikhil",19,1,50,45,65);
+//        //both s2 and s3 are of same class type, having same values for instance variables and same hashcode
+//        System.out.println(s2.equals(s3)); //true
     }
 }

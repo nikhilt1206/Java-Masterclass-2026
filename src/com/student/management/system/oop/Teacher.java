@@ -2,7 +2,7 @@ package com.student.management.system.oop;
 
 import java.util.Base64;
 
-public class Teacher {
+public class Teacher extends Person{
     private String name;
     private int age;
     private String contactNumber;
@@ -16,8 +16,9 @@ public class Teacher {
     private static final double EXPERIENCE_BONUS=2000;
 
     public Teacher(String name, int age, String contactNumber, String address, String empID, String subject, int yearsOfExperience) {
+        super(name, age, contactNumber, address);
         if(validateAge(age) && validateContactNumber(contactNumber) && validateAddress(address) && validateEmpId(empID) && validateSubject(subject)
-        && validateYearsOfExperience(yearsOfExperience)){
+                && validateYearsOfExperience(yearsOfExperience)){
             this.name = name;
             this.age = age;
             this.contactNumber = contactNumber;

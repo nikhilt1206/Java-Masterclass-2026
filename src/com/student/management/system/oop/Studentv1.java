@@ -2,7 +2,7 @@ package com.student.management.system.oop;
 
 import java.util.Objects;
 
-public class Student {
+public class Studentv1 {
     //all the instance variables should be marked as private - they cannot be accessed outside the class
     private String name;
     private int age;
@@ -28,7 +28,7 @@ public class Student {
     //Job of a constructor is to initialize instance variables - during object creation if we want to initialize instance variables - we need constructor (executed in stack memory)
     //Constructor does not have return type as getters/setters
     //Constructor which have parameters - Parametrized Constructor - we have to call it - pass the parameters while calling it
-    public Student(String name, int age, int rollNumber, double marksObtainedInEnglish, double marksObtainedInScience, double marksObtainedInMaths) {
+    public Studentv1(String name, int age, int rollNumber, double marksObtainedInEnglish, double marksObtainedInScience, double marksObtainedInMaths) {
         if(validateAge(age) && validateRollNumber(rollNumber) && validateMarks(marksObtainedInEnglish) &&
         validateMarks(marksObtainedInScience) && validateMarks(marksObtainedInMaths)){
             this.name = name;
@@ -227,7 +227,7 @@ public class Student {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
+        Studentv1 student = (Studentv1) o;
         return age == student.age && rollNumber == student.rollNumber && Double.compare(marksObtainedInEnglish, student.marksObtainedInEnglish) == 0 && Double.compare(marksObtainedInScience, student.marksObtainedInScience) == 0 && Double.compare(marksObtainedInMaths, student.marksObtainedInMaths) == 0 && Double.compare(totalMarks, student.totalMarks) == 0 && Double.compare(percentage, student.percentage) == 0 && Objects.equals(name, student.name) && Objects.equals(grade, student.grade);
     }
 

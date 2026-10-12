@@ -5,7 +5,7 @@ public class Runner {
     public static void main(String[] args){
         int x = 10; //int is data type, x is variable and 10 is value (primitive data type)
         int y[] = new int[3]; //int is PDT, y is reference variable and new int[3] - array
-        Student s1; //Student - user defined data type (non-primitive) and s1 is reference variable (not object)
+        Studentv1 s1; //Student - user defined data type (non-primitive) and s1 is reference variable (not object)
         //s1 - stores the hashcode of the object and is created inside Stack
         //s1 = new Student(); //new Student() - is object and s1 is reference variable - object creation
         /*Whenever we are going to create an object - 3 things will happen:

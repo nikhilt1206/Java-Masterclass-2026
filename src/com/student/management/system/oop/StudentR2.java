@@ -2,7 +2,7 @@ package com.student.management.system.oop;
 
 import java.util.Objects;
 
-public class StudentR2 {
+public class StudentR2 extends Person {
     private String name;
     private int age;
     private int rollNumber;
@@ -15,15 +15,19 @@ public class StudentR2 {
     private String contactNumber;
     private String address;
 
-    public StudentR2(String name, int age, int rollNumber, double marksObtainedInEnglish, double marksObtainedInScience, double marksObtainedInMaths, String contactNumber, String address) {
+    public StudentR2(String name, int age, String contactNumber, String address, int rollNumber, double marksObtainedInEnglish, double marksObtainedInScience, double marksObtainedInMaths) {
+        super(name, age, contactNumber, address);
         if(validateAge(age) && validateRollNumber(rollNumber) && validateMarks(marksObtainedInEnglish) && validateMarks(marksObtainedInScience) && validateMarks(marksObtainedInMaths) && validateAddress(address)
-        && validateContactNumber(contactNumber)){
+                && validateContactNumber(contactNumber)){
             this.name = name;
             this.age = age;
             this.rollNumber = rollNumber;
             this.marksObtainedInEnglish = marksObtainedInEnglish;
             this.marksObtainedInScience = marksObtainedInScience;
             this.marksObtainedInMaths = marksObtainedInMaths;
+            this.totalMarks = totalMarks;
+            this.percentage = percentage;
+            this.grade = grade;
             this.contactNumber = contactNumber;
             this.address = address;
         }
