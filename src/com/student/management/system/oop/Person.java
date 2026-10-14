@@ -71,7 +71,7 @@ public class Person {
         }
     }
 
-    @Override
+    @Override //method overriding - comes from the parent class (Object class) object
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
@@ -79,5 +79,17 @@ public class Person {
                 ", contactNumber='" + contactNumber + '\'' +
                 ", address='" + address + '\'' +
                 '}';
+    }
+
+    protected boolean updateInformation(String newAddress, String newContactNumber){
+        if(validateAddress(newAddress) && validateContactNumber(newContactNumber)){
+            this.address = newAddress;
+            this.contactNumber = newContactNumber;
+            System.out.println("Updated Address and Contact Number Info");
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

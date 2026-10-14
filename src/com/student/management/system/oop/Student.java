@@ -3,8 +3,6 @@ package com.student.management.system.oop;
 import java.util.Objects;
 
 public class Student extends Person {
-    private String name;
-    private int age;
     private int rollNumber;
     private double marksObtainedInEnglish;
     private double marksObtainedInScience;
@@ -12,8 +10,7 @@ public class Student extends Person {
     private double totalMarks;
     private double percentage;
     private String grade;
-    private String contactNumber;
-    private String address;
+
 
     public Student(String name, int age, String contactNumber, String address, int rollNumber, double marksObtainedInEnglish, double marksObtainedInScience, double marksObtainedInMaths) {
         super(name, age, contactNumber, address);
@@ -255,29 +252,21 @@ public class Student extends Person {
         return Objects.hash(name, age, rollNumber, marksObtainedInEnglish, marksObtainedInScience, marksObtainedInMaths, totalMarks, percentage, grade, contactNumber, address);
     }
 
-    public boolean updateInformation(String newAddress, String newContactNumber){
+    public boolean updateInformation(String newAddress, String newContactNumber) {
         //Parent Approval
         System.out.println("Requesting Parent Approval");
         boolean parentApprovalStatus = parentApproval();
-        if(parentApprovalStatus){
+        if (parentApprovalStatus) {
             //update Person.address with newAddress and Person.contactNumber with newContactNumber
-            if(newAddress.isEmpty() || newAddress==null){
-                System.err.println("Invalid new address");
+            if (super.updateInformation(newAddress, newContactNumber)) {
+                System.out.println("Notifying the Parent.....");
+                return true;
+            } else {
+                System.err.println("No approval from the Parent.....");
                 return false;
             }
-            if(!newContactNumber.matches("\\d{10}")){
-                System.err.println("Invalid new contact number");
-                return false;
-            }
-            address = newAddress;
-            contactNumber = newContactNumber;
-            System.out.println("Notifying the Parent.....");
-            return true;
         }
-        else {
-            System.err.println("No approval from the Parent.....");
-            return false;
-        }
+        return false;
     }
 
     //dummy method

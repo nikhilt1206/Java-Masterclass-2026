@@ -3,10 +3,7 @@ package com.student.management.system.oop;
 import java.util.Base64;
 
 public class Teacher extends Person{
-    private String name;
-    private int age;
-    private String contactNumber;
-    private String address;
+
     private String empID;
     private String subject;
     private int yearsOfExperience;
@@ -193,4 +190,23 @@ public class Teacher extends Person{
                 ", salary=" + salary +
                 '}';
     }
+
+    public boolean updateInformation(String newAddress, String newContactNumber){
+        boolean hrApproval = getHRApproval();
+        System.out.println("Notifying HR for Approval....");
+        if(hrApproval){
+            if(super.updateInformation(newAddress,newContactNumber)){
+                System.out.println("Notifying the Teacher that information is updated....");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean getHRApproval() {
+        System.out.println("HR approved the request");
+        return true; //dummy method
+    }
+
+
 }
