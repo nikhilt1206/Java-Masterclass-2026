@@ -2,7 +2,7 @@ package com.student.management.system.oop;
 
 import java.util.Objects;
 
-public class StudentR2 extends Person {
+public class Student extends Person {
     private String name;
     private int age;
     private int rollNumber;
@@ -15,7 +15,7 @@ public class StudentR2 extends Person {
     private String contactNumber;
     private String address;
 
-    public StudentR2(String name, int age, String contactNumber, String address, int rollNumber, double marksObtainedInEnglish, double marksObtainedInScience, double marksObtainedInMaths) {
+    public Student(String name, int age, String contactNumber, String address, int rollNumber, double marksObtainedInEnglish, double marksObtainedInScience, double marksObtainedInMaths) {
         super(name, age, contactNumber, address);
         if(validateAge(age) && validateRollNumber(rollNumber) && validateMarks(marksObtainedInEnglish) && validateMarks(marksObtainedInScience) && validateMarks(marksObtainedInMaths) && validateAddress(address)
                 && validateContactNumber(contactNumber)){
@@ -246,12 +246,42 @@ public class StudentR2 extends Person {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        StudentR2 studentR2 = (StudentR2) o;
+        Student studentR2 = (Student) o;
         return age == studentR2.age && rollNumber == studentR2.rollNumber && Double.compare(marksObtainedInEnglish, studentR2.marksObtainedInEnglish) == 0 && Double.compare(marksObtainedInScience, studentR2.marksObtainedInScience) == 0 && Double.compare(marksObtainedInMaths, studentR2.marksObtainedInMaths) == 0 && Double.compare(totalMarks, studentR2.totalMarks) == 0 && Double.compare(percentage, studentR2.percentage) == 0 && Objects.equals(name, studentR2.name) && Objects.equals(grade, studentR2.grade) && Objects.equals(contactNumber, studentR2.contactNumber) && Objects.equals(address, studentR2.address);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name, age, rollNumber, marksObtainedInEnglish, marksObtainedInScience, marksObtainedInMaths, totalMarks, percentage, grade, contactNumber, address);
+    }
+
+    public boolean updateInformation(String newAddress, String newContactNumber){
+        //Parent Approval
+        System.out.println("Requesting Parent Approval");
+        boolean parentApprovalStatus = parentApproval();
+        if(parentApprovalStatus){
+            //update Person.address with newAddress and Person.contactNumber with newContactNumber
+            if(newAddress.isEmpty() || newAddress==null){
+                System.err.println("Invalid new address");
+                return false;
+            }
+            if(!newContactNumber.matches("\\d{10}")){
+                System.err.println("Invalid new contact number");
+                return false;
+            }
+            address = newAddress;
+            contactNumber = newContactNumber;
+            System.out.println("Notifying the Parent.....");
+            return true;
+        }
+        else {
+            System.err.println("No approval from the Parent.....");
+            return false;
+        }
+    }
+
+    //dummy method
+    private boolean parentApproval(){
+        return true;
     }
 }

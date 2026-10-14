@@ -7,10 +7,12 @@ public class Person {
     protected String address;
 
     public Person(String name, int age, String contactNumber, String address) {
-        this.name = name;
-        this.age = age;
-        this.contactNumber = contactNumber;
-        this.address = address;
+        if(validateAddress(address) && validateContactNumber(contactNumber)){
+            this.name = name;
+            this.age = age;
+            this.contactNumber = contactNumber;
+            this.address = address;
+        }
     }
 
     public String getName() {
@@ -34,7 +36,19 @@ public class Person {
     }
 
     public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
+        if(validateContactNumber(contactNumber)){
+            this.contactNumber = contactNumber;
+        }
+    }
+
+    private boolean validateContactNumber(String contactNumber){
+        if(contactNumber.matches("\\d{10}")){
+            return true;
+        }
+        else{
+            System.err.println("Invalid contact number");
+            return false;
+        }
     }
 
     public String getAddress() {
@@ -42,7 +56,19 @@ public class Person {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        if(validateAddress(address)){
+            this.address = address;
+        }
+    }
+
+    private boolean validateAddress(String address){
+        if(address.isEmpty() || address==null){
+            System.err.println("Invalid Person address");
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     @Override
