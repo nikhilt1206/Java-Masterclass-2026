@@ -203,6 +203,30 @@ public class Teacher extends Person{
         return false;
     }
 
+    public boolean updateInformation(String newAddress){
+        boolean hrApproval = getHRApproval();
+        System.out.println("Notifying HR for Approval....");
+        if(hrApproval){
+            if(super.updateInformation(newAddress)){
+                System.out.println("Notifying the Teacher that information is updated....");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean updateInformation(String newContactNumber,boolean update){
+        boolean hrApproval = getHRApproval();
+        System.out.println("Notifying HR for Approval....");
+        if(hrApproval){
+            if(super.updateInformation(newContactNumber,update)){
+                System.out.println("Notifying the Teacher that information is updated....");
+                return true;
+            }
+        }
+        return false;
+    }
+
     private boolean getHRApproval() {
         System.out.println("HR approved the request");
         return true; //dummy method

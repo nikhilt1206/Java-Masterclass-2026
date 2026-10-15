@@ -8,6 +8,7 @@ public class Runner8 {
         s2.calculateGrade();
         s2.displayStudentInfo();
         s2.updateInformation("Mumbai","9876453279");
+        s2.updateInformation("Bengaluru");
         s2.displayStudentInfo();
 
         Teacher t = new Teacher("Roli",25,"9843432433","Gazhipur","T402","Maths",9);

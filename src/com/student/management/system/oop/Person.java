@@ -92,4 +92,30 @@ public class Person {
             return false;
         }
     }
+
+    //Method Overloading - multiple methods are going to have same name and they will get differentiated with 2 rules:
+    //1. Count of Parameters
+    //2. Data Type Sequence
+    //Method Overloading is Compile Time Polymorphism - happens inside a class (does not require Parent-child relationship)
+    protected boolean updateInformation(String newAddress){
+        if(validateAddress(newAddress)){
+            this.address = newAddress;
+            System.out.println("Updated Address Info");
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    protected boolean updateInformation(String newContactNumber, boolean update){
+        if(validateContactNumber(newContactNumber)){
+            this.contactNumber = newContactNumber;
+            System.out.println("Updated Contact Info");
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
