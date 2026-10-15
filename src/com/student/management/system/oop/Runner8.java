@@ -17,6 +17,7 @@ public class Runner8 {
         t.updateInformation("Delhi","7704889234");//Method overriding - during execution which method will be called gets decided
         ((Teacher)t).displayTeacherInformation();
 
+        //Polymorphism helps to achieve Loose Coupling
         //Method Overriding : When we create reference of parent class and object is created of child class
         //Parent and Child class have same method name, but implementation is different
         //Java overrides the parent class method and call child class method - because importance is always given to object we have created

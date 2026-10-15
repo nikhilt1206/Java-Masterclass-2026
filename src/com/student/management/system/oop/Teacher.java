@@ -231,6 +231,4 @@ public class Teacher extends Person{
         System.out.println("HR approved the request");
         return true; //dummy method
     }
-
-
 }
