@@ -11,6 +11,7 @@ public class Teacher extends Person{
 
     private static final double BASE_SALARY=30000; //constant (should be written in CAPs) base salary - final - should be marked as static
     private static final double EXPERIENCE_BONUS=2000;
+    private static int teacherCount=0;
 
     public Teacher(String name, int age, String contactNumber, String address, String empID, String subject, int yearsOfExperience) {
         super(name, age, contactNumber, address);
@@ -24,6 +25,7 @@ public class Teacher extends Person{
             this.subject = subject;
             this.yearsOfExperience = yearsOfExperience;
             calculateSalary();
+            teacherCount++;
         }
     }
 
@@ -230,5 +232,9 @@ public class Teacher extends Person{
     private boolean getHRApproval() {
         System.out.println("HR approved the request");
         return true; //dummy method
+    }
+
+    public static int getTotalTeacherCount(){
+        return teacherCount;
     }
 }

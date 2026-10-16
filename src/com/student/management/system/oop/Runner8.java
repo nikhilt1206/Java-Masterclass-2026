@@ -37,5 +37,10 @@ public class Runner8 {
         //Every class in java has an implicit parent class and that parent class is called Object class belongs to package java.lang
         //Parent of Person class is Object class
         //Fully qualified name of a class - package name.class name - java.lang.Object
+
+        System.out.println("Total People joined today : "+Person.getTotalPersonCount());
+        System.out.println("Total Student joined today : "+Student.getTotalStudentCount());
+        System.out.println("Total Teacher joined today : "+Teacher.getTotalTeacherCount());
+
     }
 }
