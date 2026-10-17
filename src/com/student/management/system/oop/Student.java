@@ -11,7 +11,7 @@ public class Student extends Person {
     private final double percentage;
     private final String grade;
     private static int studentCount=0;
-
+    public static int demo = 10;
 
 //    public Student(String name, int age, String contactNumber, String address, int rollNumber, double marksObtainedInEnglish, double marksObtainedInScience, double marksObtainedInMaths) {
 //        super(name, age, contactNumber, address);

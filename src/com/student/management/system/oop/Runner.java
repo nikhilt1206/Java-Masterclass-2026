@@ -1,4 +1,6 @@
 package com.student.management.system.oop;
+import static com.student.management.system.oop.Student.*;
+//al the public static variables and methods can be accessed without using Class name
 
 public class Runner {
     public static void main(String[] args){
@@ -11,5 +13,9 @@ public class Runner {
                 .build();
         System.out.println(s1);
         s1.displayStudentInfo();
+        //static import - no need to use class name (improves readability)
+        //System.out.println(Student.demo); - not needed
+        System.out.println(demo);
+        System.out.println(getTotalStudentCount());
     }
 }
