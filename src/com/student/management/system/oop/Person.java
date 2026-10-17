@@ -64,7 +64,7 @@ public class Person {
     }
 
     private boolean validateAddress(String address){
-        if(address.isEmpty() || address==null){
+        if(address==null || address.trim().isEmpty() ){
             System.err.println("Invalid Person address");
             return false;
         }

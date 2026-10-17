@@ -1,20 +1,15 @@
 package com.student.management.system.oop;
 
-//This is the class which has to be executed
 public class Runner {
     public static void main(String[] args){
-        int x = 10; //int is data type, x is variable and 10 is value (primitive data type)
-        int y[] = new int[3]; //int is PDT, y is reference variable and new int[3] - array
-        Studentv1 s1; //Student - user defined data type (non-primitive) and s1 is reference variable (not object)
-        //s1 - stores the hashcode of the object and is created inside Stack
-        //s1 = new Student(); //new Student() - is object and s1 is reference variable - object creation
-        /*Whenever we are going to create an object - 3 things will happen:
-        1. Class will be loaded into memory (Student Class)
-        2. Instance variables are created (heap memory)
-        3. Constructor is called
-        */
-        //Student s2 = new Student(); //another object will be created in the heap memory & instance variables created again in the Heap memory
-        //Two objects we created - 2 students (14 instance variables are created)
-        //Each object is indicating the real student present in the class.
+        //With Builder Design Pattern code is much more readable with details
+        Student s1 = new Student.StudentBuilder("Rola",18,"Gazhipur","9454730423")
+                .withRollNumber(41)
+                .withMarksObtainedInEnglish(80)
+                .withMarksObtainedInScience(90)
+                .withMarksObtainedInMaths(95)
+                .build();
+        System.out.println(s1);
+        s1.displayStudentInfo();
     }
 }
