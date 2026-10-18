@@ -1,6 +1,7 @@
 package com.student.management.system.oop;
 
-public class Person {
+public abstract class Person { //parent of Student and Teacher class
+    //abstract keyword restrict object creation
     protected String name;
     protected int age;
     protected String contactNumber;

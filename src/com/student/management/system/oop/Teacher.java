@@ -2,7 +2,7 @@ package com.student.management.system.oop;
 
 import java.util.Base64;
 
-public class Teacher extends Person{
+public final class Teacher extends Person{
 
     private String empID;
     private String subject;
@@ -131,11 +131,11 @@ public class Teacher extends Person{
         return empID;
     }
 
-    public void setEmpID(String empID) {
-        if(validateEmpId(empID)){
-            this.empID = empID;
-        }
-    }
+//    public void setEmpID(String empID) {
+//        if(validateEmpId(empID)){
+//            this.empID = empID;
+//        }
+//    }
 
     public String getSubject() {
         return subject;
@@ -162,7 +162,7 @@ public class Teacher extends Person{
     }
 
     //Business logic methods should not be exposed outside the class
-    private void calculateSalary(){
+    protected final void calculateSalary(){//Restricted method overriding
         salary= BASE_SALARY+(yearsOfExperience*EXPERIENCE_BONUS);
     }
 

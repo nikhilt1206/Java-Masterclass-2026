@@ -2,14 +2,14 @@ package com.student.management.system.oop;
 
 import java.util.Objects;
 
-public class Student extends Person {
+public final class Student extends Person {
     private final int rollNumber;
     private final double marksObtainedInEnglish;
     private final double marksObtainedInScience;
     private final double marksObtainedInMaths;
     private final double totalMarks;
     private final double percentage;
-    private final String grade;
+    private String grade;
     private static int studentCount=0;
     public static int demo = 10;
 
@@ -41,26 +41,6 @@ public class Student extends Person {
         percentage = calculatePercentage();
         grade = calculateGrade();
         studentCount++;
-    }
-
-    private boolean validateMarks(double marksForTheSubject) {
-        if(marksForTheSubject>=100 || marksForTheSubject<0){
-            System.err.println("Invalid marks for student!!");
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-
-    private boolean validateRollNumber(int rollNumber) {
-        if(rollNumber>=1 && rollNumber<=100){
-            return true;
-        }
-        else{
-            System.err.println("Invalid roll number for student!!");
-            return false;
-        }
     }
 
     public String getName() {
@@ -155,17 +135,17 @@ public class Student extends Person {
 //        }
 //    }
 
-    public double calculateTotalMarks(){
+    public final double calculateTotalMarks(){
         double totalMarks = marksObtainedInEnglish + marksObtainedInScience + marksObtainedInMaths;
         return totalMarks;
     }
 
-    public double calculatePercentage(){
+    public final double calculatePercentage(){
         double percentage = totalMarks/3;
         return percentage;
     }
 
-    public String calculateGrade(){
+    public final String calculateGrade(){
         String grade;
         if(percentage==0){
              grade="Cannot be calculated!!";
@@ -327,7 +307,7 @@ public class Student extends Person {
             return student;
         }
 
-        public boolean validateContactNumber(String contactNumber){
+        private boolean validateContactNumber(String contactNumber){
             if(contactNumber!=null && contactNumber.matches("\\d{10}")){
                 return true;
             }
@@ -337,7 +317,7 @@ public class Student extends Person {
             }
         }
 
-        public boolean validateAddress(String address){
+        private boolean validateAddress(String address){
             if(!address.isEmpty()){
                 return true;
             }
@@ -353,6 +333,26 @@ public class Student extends Person {
             }
             else{
                 System.err.println("Invalid age for student!!");
+                return false;
+            }
+        }
+
+        private boolean validateMarks(double marksForTheSubject) {
+            if(marksForTheSubject>=100 || marksForTheSubject<0){
+                System.err.println("Invalid marks for student!!");
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
+        private boolean validateRollNumber(int rollNumber) {
+            if(rollNumber>=1 && rollNumber<=100){
+                return true;
+            }
+            else{
+                System.err.println("Invalid roll number for student!!");
                 return false;
             }
         }

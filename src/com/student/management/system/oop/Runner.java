@@ -17,5 +17,7 @@ public class Runner {
         //System.out.println(Student.demo); - not needed
         System.out.println(demo);
         System.out.println(getTotalStudentCount());
+
+        //Person p = new Person(); - Person is abstract class - object cannot be created
     }
 }
