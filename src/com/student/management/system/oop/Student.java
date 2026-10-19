@@ -2,14 +2,14 @@ package com.student.management.system.oop;
 
 import java.util.Objects;
 
-public final class Student extends Person {
+public abstract class Student extends Person {
     private final int rollNumber;
     private final double marksObtainedInEnglish;
     private final double marksObtainedInScience;
     private final double marksObtainedInMaths;
-    private final double totalMarks;
-    private final double percentage;
-    private String grade;
+    protected final double totalMarks;
+    protected double percentage;
+    protected String grade;
     private static int studentCount=0;
     public static int demo = 10;
 
@@ -31,15 +31,13 @@ public final class Student extends Person {
 //        }
 //    }
 
-    private Student(StudentBuilder studentBuilder){
+    protected Student(StudentBuilder studentBuilder){
         super(studentBuilder.name,studentBuilder.age,studentBuilder.contactNumber,studentBuilder.address);
         this.rollNumber = studentBuilder.rollNumber;
         this.marksObtainedInEnglish = studentBuilder.marksObtainedInEnglish;
         this.marksObtainedInScience = studentBuilder.marksObtainedInScience;
         this.marksObtainedInMaths = studentBuilder.marksObtainedInMaths;
         totalMarks = calculateTotalMarks();
-        percentage = calculatePercentage();
-        grade = calculateGrade();
         studentCount++;
     }
 
@@ -139,11 +137,8 @@ public final class Student extends Person {
         double totalMarks = marksObtainedInEnglish + marksObtainedInScience + marksObtainedInMaths;
         return totalMarks;
     }
-
-    public final double calculatePercentage(){
-        double percentage = totalMarks/3;
-        return percentage;
-    }
+    //two different implementation of calculatePercentage() is required - logic/implementation has to be written in child classes
+    public abstract double calculatePercentage();
 
     public final String calculateGrade(){
         String grade;
@@ -261,7 +256,8 @@ public final class Student extends Person {
         return studentCount;
     }
 
-    public static class StudentBuilder{
+    //Inner classes can be abstract
+    public abstract static class StudentBuilder{
         //Mandatory
         private String name;
         private int age;
@@ -302,10 +298,7 @@ public final class Student extends Person {
             return this;
         }
 
-        public Student build(){
-            Student student = new Student(this);
-            return student;
-        }
+        public abstract Student build();
 
         private boolean validateContactNumber(String contactNumber){
             if(contactNumber!=null && contactNumber.matches("\\d{10}")){
