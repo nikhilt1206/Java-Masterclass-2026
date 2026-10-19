@@ -11,6 +11,7 @@ public class RunnerLatest {
         System.out.println(s1);
 
         Student s2 = new SportStudent.SportStudentBuilder("Roli",16,"Gazhipur","7094567323")
+                .withSportsScore(70)
                 .withRollNumber(41)
                 .withMarksObtainedInEnglish(89)
                 .withMarksObtainedInScience(90)
