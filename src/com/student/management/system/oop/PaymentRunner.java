@@ -8,6 +8,23 @@ public class PaymentRunner {
         payable.calculatePayment();
         payable.generateReciept();
         System.out.println(payable.getDiscount());
+        System.out.println(PaymentMode.CARD.getDescription());
+
+        int index = PaymentMode.CARD.ordinal(); //gives index of the value
+        System.out.println(index);
+
+        //Convert String to enum
+        PaymentMode p = PaymentMode.valueOf("UPI"); //returns enum representation
+        System.out.println(p);
+
+        PaymentMode[] modes = PaymentMode.values(); //returns array - to read entire values in our enum
+        for(PaymentMode mode : modes){
+            System.out.println(mode);
+        }
+
+        PaymentMode.CARD.demo();
+        PaymentMode.CARD.test();
+
 
 //        Payable payable1 = new SportsActivityFee(5000,3000,2000,1000);
 //        payable1.processPayment("CASH");
