@@ -25,23 +25,22 @@ public class PaymentRunner {
         PaymentMode.CARD.demo();
         PaymentMode.CARD.test();
 
+        Payable payable1 = new SportsActivityFee(5000,3000,2000,1000);
+        //payable1.processPayment("CASH");
+        payable1.calculatePayment();
+        payable1.generateReciept();
+        System.out.println(payable1.getDiscount());
 
-//        Payable payable1 = new SportsActivityFee(5000,3000,2000,1000);
-//        payable1.processPayment("CASH");
-//        payable1.calculatePayment();
-//        payable1.generateReciept();
-//        System.out.println(payable1.getDiscount());
-//
-//        Payable payable2 = new TransportFee(1000,3,500);
-//        payable2.processPayment("CASH");
-//        payable2.calculatePayment();
-//        payable2.generateReciept();
-//        System.out.println(payable2.getDiscount());
-//
-//        Payable payable3     = new LibraryFee(500,200,100);
-//        payable3.processPayment("BITCOIN");
-//        payable3.calculatePayment();
-//        payable3.generateReciept();
-//        System.out.println(payable3.getDiscount());
+        Payable payable2 = new TransportFee(1000,3,500);
+        //payable2.processPayment("CASH");
+        payable2.calculatePayment();
+        payable2.generateReciept();
+        System.out.println(payable2.getDiscount());
+
+        Payable payable3     = new LibraryFee(500,200,100);
+        //payable3.processPayment("BITCOIN");
+        payable3.calculatePayment();
+        payable3.generateReciept();
+        System.out.println(payable3.getDiscount());
     }
 }
