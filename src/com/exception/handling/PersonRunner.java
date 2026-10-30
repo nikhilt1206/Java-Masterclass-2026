@@ -8,6 +8,7 @@ public class PersonRunner {
             System.out.println(p.getName());
         }catch (NullPointerException e){
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 }
