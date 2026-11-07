@@ -18,9 +18,11 @@ public class Person {
         else {
             //throws - is for handling exception
             //to throw the explicitly - throws keyword (to give an exception)
+            //checked exception - when compilers tells to handle the exception
             try{
-                throw new InvalidAgeException("Invalid Age");
-                //compile time exception - need to be handled by trt/catch
+                throw new InvalidAgeException("Invalid Age"); //explicitly raising the exception
+                //when we use throw - we are actually creating object of that exception
+                //compile time exception - need to be handled by try/catch
             }
             catch (InvalidAgeException e){
                 System.err.println(e.getMessage());
