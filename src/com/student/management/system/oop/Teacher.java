@@ -1,5 +1,9 @@
 package com.student.management.system.oop;
 
+import com.exception.handling.InvalidAgeException;
+import com.student.management.system.exceptions.InvalidEmpIdException;
+import com.student.management.system.exceptions.InvalidSubjectException;
+
 import java.util.Base64;
 
 public final class Teacher extends Person{
@@ -34,7 +38,13 @@ public final class Teacher extends Person{
             return true;
         }
         else{
-            System.err.println("Invalid teacher age!!");
+            try{
+                throw new InvalidAgeException("Teacher age needs to be greater than 21 and less than 65");
+            }
+            catch (InvalidAgeException e){
+                System.err.print(e.getMessage());
+                e.printStackTrace();
+            }
             return false;
         }
     }
@@ -64,7 +74,12 @@ public final class Teacher extends Person{
             return true;
         }
         else{
-            System.err.println("Invalid Employee ID!!");
+            try{
+                throw new InvalidEmpIdException("Invalid Teacher ID...use format T-XXX");
+            } catch (InvalidEmpIdException e) {
+                System.err.print(e.getMessage());
+                e.printStackTrace();
+            }
             return false;
         }
     }
@@ -74,7 +89,12 @@ public final class Teacher extends Person{
             return true;
         }
         else{
-            System.err.println("Invalid subject!!");
+            try{
+                throw new InvalidSubjectException("Subject cannot be empty");
+            } catch (InvalidSubjectException e) {
+                System.err.print(e.getMessage());
+                e.printStackTrace();
+            }
             return false;
         }
     }

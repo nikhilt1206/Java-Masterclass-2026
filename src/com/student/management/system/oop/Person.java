@@ -1,5 +1,8 @@
 package com.student.management.system.oop;
 
+import com.student.management.system.exceptions.InvalidAddressException;
+import com.student.management.system.exceptions.InvalidContactNumberException;
+
 public abstract class Person { //parent of Student and Teacher class
     //abstract keyword restrict object creation
     protected String name;
@@ -49,7 +52,13 @@ public abstract class Person { //parent of Student and Teacher class
             return true;
         }
         else{
-            System.err.println("Invalid contact number");
+            try{
+                throw new InvalidContactNumberException("Cannot number needs to be a number");
+            }
+            catch(InvalidContactNumberException e){
+                System.err.print(e.getMessage());
+                e.printStackTrace();
+            }
             return false;
         }
     }
@@ -66,7 +75,12 @@ public abstract class Person { //parent of Student and Teacher class
 
     private boolean validateAddress(String address){
         if(address==null || address.trim().isEmpty() ){
-            System.err.println("Invalid Person address");
+            try{
+                throw new InvalidAddressException("Address cannot be empty or null");
+            } catch (InvalidAddressException e) {
+                System.err.print(e.getMessage());
+                e.printStackTrace();
+            }
             return false;
         }
         else{

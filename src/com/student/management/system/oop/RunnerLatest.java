@@ -2,7 +2,7 @@ package com.student.management.system.oop;
 
 public class RunnerLatest {
     public static void main(String[] args){
-        Student s1 = new RegularStudent.RegularStudentBuilder("Nikhil",14,"Bengaluru","9087435623")
+        Student s1 = new RegularStudent.RegularStudentBuilder("Nikhil",-14,"Bengaluru","9087435623")
                 .withRollNumber(12)
                 .withMarksObtainedInEnglish(89)
                 .withMarksObtainedInScience(70)

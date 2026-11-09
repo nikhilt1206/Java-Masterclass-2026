@@ -1,5 +1,9 @@
 package com.student.management.system.oop;
 
+import com.exception.handling.InvalidAgeException;
+import com.student.management.system.exceptions.InvalidAddressException;
+import com.student.management.system.exceptions.InvalidMarksException;
+
 import java.util.Objects;
 
 public abstract class Student extends Person {
@@ -311,12 +315,17 @@ public abstract class Student extends Person {
         }
 
         private boolean validateAddress(String address){
-            if(!address.isEmpty()){
-                return true;
+            if(address==null || address.trim().isEmpty() ){
+                try{
+                    throw new InvalidAddressException("Address cannot be empty or null");
+                } catch (InvalidAddressException e) {
+                    System.err.print(e.getMessage());
+                    e.printStackTrace();
+                }
+                return false;
             }
             else{
-                System.err.print("Address cannot be Empty!!");
-                return false;
+                return true;
             }
         }
 
@@ -325,15 +334,27 @@ public abstract class Student extends Person {
                 return true;
             }
             else{
-                System.err.println("Invalid age for student!!");
+                try{
+                    throw new InvalidAgeException("Student age needs to be greater than 10 and less than 21");
+                }
+                catch (InvalidAgeException e){
+                    System.err.print(e.getMessage());
+                    e.printStackTrace();
+                }
                 return false;
             }
         }
 
         private boolean validateMarks(double marksForTheSubject) {
-            if(marksForTheSubject>=100 || marksForTheSubject<0){
-                System.err.println("Invalid marks for student!!");
-                return false;
+            if(marksForTheSubject<=100 || marksForTheSubject>0){
+               try{
+                   throw new InvalidMarksException("Marks should be grater than 0 and less than equal to 100");
+               }
+               catch(InvalidMarksException e){
+                   System.err.print(e.getMessage());
+                   e.printStackTrace();
+               }
+               return false;
             }
             else{
                 return true;
