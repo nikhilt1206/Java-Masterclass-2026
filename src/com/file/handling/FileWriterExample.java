@@ -6,7 +6,6 @@ import java.io.IOException;
 
 public class FileWriterExample {
     public static void main(String[] args){
-        //
         //Write the content into the file abc.txt
         //Tell java - where the file is ? - create a pointer - File
         File myFile = new File("abc.txt"); //relative path
