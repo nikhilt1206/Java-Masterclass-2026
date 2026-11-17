@@ -1,0 +1,2 @@
+Hello i am writing into the file from Java code!!Hello i am writing into the file from Java code23!!Hello i am writing into the file from Java code23!!
+Hello i am writing into the file from Java code23!!
