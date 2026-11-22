@@ -20,7 +20,5 @@ public class ContactRunner {
             e.printStackTrace();
         }
         System.out.println(contactOne);
-
-
     }
 }
