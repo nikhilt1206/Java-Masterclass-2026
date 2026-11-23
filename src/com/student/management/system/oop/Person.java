@@ -3,8 +3,11 @@ package com.student.management.system.oop;
 import com.student.management.system.exceptions.InvalidAddressException;
 import com.student.management.system.exceptions.InvalidContactNumberException;
 
-public abstract class Person { //parent of Student and Teacher class
+import java.io.Serializable;
+
+public abstract class Person implements Serializable { //parent of Student and Teacher class
     //abstract keyword restrict object creation
+    private static final long serialVersionUID = 42L;
     protected String name;
     protected int age;
     protected String contactNumber;
